@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-10-06T21:58:04 IST" name="Default suite" finished-at="2022-10-06T21:59:35 IST" duration-ms="90934">
+    <groups>
+    </groups>
+    <test started-at="2022-10-06T21:58:04 IST" name="Default test" finished-at="2022-10-06T21:59:35 IST" duration-ms="90934">
+      <class name="com.dataProviderTests.DataDrivenTests">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:com.dataProviderTests.DataDrivenTests@5f0e9815]" started-at="2022-10-06T21:58:42 IST" name="setUp" finished-at="2022-10-06T21:58:47 IST" duration-ms="5079" status="PASS">
+          <params>
+            <param index="0">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="loginTests()[pri:0, instance:com.dataProviderTests.DataDrivenTests@5f0e9815]" started-at="2022-10-06T21:58:47 IST" name="loginTests" finished-at="2022-10-06T21:58:47 IST" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTests -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.dataProviderTests.DataDrivenTests@5f0e9815]" started-at="2022-10-06T21:58:47 IST" name="tearDown" finished-at="2022-10-06T21:58:48 IST" duration-ms="65" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.dataProviderTests.DataDrivenTests -->
+      <class name="com.pageTests.WishlistTests">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:com.pageTests.WishlistTests@4b3ed2f0]" started-at="2022-10-06T21:58:04 IST" name="setUp" finished-at="2022-10-06T21:58:11 IST" duration-ms="7630" status="PASS">
+          <params>
+            <param index="0">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyIfTheCartPageIsLoading()[pri:0, instance:com.pageTests.WishlistTests@4b3ed2f0]" started-at="2022-10-06T21:58:11 IST" name="verifyIfTheCartPageIsLoading" finished-at="2022-10-06T21:58:26 IST" duration-ms="14692" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyIfTheCartPageIsLoading -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.pageTests.WishlistTests@4b3ed2f0]" started-at="2022-10-06T21:58:26 IST" name="tearDown" finished-at="2022-10-06T21:58:42 IST" duration-ms="16275" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.pageTests.WishlistTests -->
+      <class name="com.pageTests.LoginTests">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:com.pageTests.LoginTests@76884e4b]" started-at="2022-10-06T21:58:48 IST" name="setUp" finished-at="2022-10-06T21:58:53 IST" duration-ms="5918" status="PASS">
+          <params>
+            <param index="0">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyIfCloseButtonIsWorking()[pri:0, instance:com.pageTests.LoginTests@76884e4b]" started-at="2022-10-06T21:58:53 IST" name="verifyIfCloseButtonIsWorking" finished-at="2022-10-06T21:59:05 IST" duration-ms="11542" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyIfCloseButtonIsWorking -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.pageTests.LoginTests@76884e4b]" started-at="2022-10-06T21:59:05 IST" name="tearDown" finished-at="2022-10-06T21:59:05 IST" duration-ms="164" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:com.pageTests.LoginTests@76884e4b]" started-at="2022-10-06T21:59:05 IST" name="setUp" finished-at="2022-10-06T21:59:10 IST" duration-ms="5087" status="PASS">
+          <params>
+            <param index="0">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyIfFacebookAndGooglePageIsRedirecting()[pri:0, instance:com.pageTests.LoginTests@76884e4b]" started-at="2022-10-06T21:59:10 IST" name="verifyIfFacebookAndGooglePageIsRedirecting" finished-at="2022-10-06T21:59:22 IST" duration-ms="12255" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyIfFacebookAndGooglePageIsRedirecting -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.pageTests.LoginTests@76884e4b]" started-at="2022-10-06T21:59:22 IST" name="tearDown" finished-at="2022-10-06T21:59:23 IST" duration-ms="155" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:com.pageTests.LoginTests@76884e4b]" started-at="2022-10-06T21:59:23 IST" name="setUp" finished-at="2022-10-06T21:59:26 IST" duration-ms="3190" status="PASS">
+          <params>
+            <param index="0">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyIfLoginIsTakingPlaceSuccessfully()[pri:0, instance:com.pageTests.LoginTests@76884e4b]" started-at="2022-10-06T21:59:26 IST" name="verifyIfLoginIsTakingPlaceSuccessfully" finished-at="2022-10-06T21:59:34 IST" duration-ms="8591" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyIfLoginIsTakingPlaceSuccessfully -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.pageTests.LoginTests@76884e4b]" started-at="2022-10-06T21:59:34 IST" name="tearDown" finished-at="2022-10-06T21:59:35 IST" duration-ms="152" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.pageTests.LoginTests -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

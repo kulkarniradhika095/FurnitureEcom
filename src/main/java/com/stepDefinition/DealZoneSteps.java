@@ -1,7 +1,8 @@
 package com.stepDefinition;
 
-import com.dataDriven.FileReading;
-import com.keywords.UIKeywords;
+import com.dataDriven.FileRead;
+
+import com.keywords.Keywords;
 import com.pages.DealZone;
 
 import io.cucumber.java.en.And;
@@ -13,7 +14,7 @@ public class DealZoneSteps {
 	
 	@Given("Open urbanLadder")
 	public void launchUrbanladder() {
-		UIKeywords.launchUrl(FileReading.url);
+		Keywords.launchUrl(FileRead.url);
 	}
 	@When("hover on Deal Zone")
 	public void hoverOnDealZone() throws InterruptedException {

@@ -1,0 +1,30 @@
+2022-Oct-06 21:59:01,214 [main] com.keywords.Keywords 
+  INFO  https://www.urbanladder.com/ : url is launched
+2022-Oct-06 21:59:01,339 [main] com.pages.LoginPage 
+  INFO  Hovered on Profile Icon
+2022-Oct-06 21:59:02,398 [main] com.pages.LoginPage 
+  INFO  Clicked On Login Button
+2022-Oct-06 21:59:05,471 [main] com.pages.LoginPage 
+  INFO  Login/SignUp Window is closed
+2022-Oct-06 21:59:10,733 [main] com.keywords.Keywords 
+  INFO  Chrome : browser has been launched successfully
+2022-Oct-06 21:59:16,665 [main] com.keywords.Keywords 
+  INFO  https://www.urbanladder.com/ : url is launched
+2022-Oct-06 21:59:16,744 [main] com.pages.LoginPage 
+  INFO  Hovered on Profile Icon
+2022-Oct-06 21:59:18,186 [main] com.pages.LoginPage 
+  INFO  Clicked On Login Button
+2022-Oct-06 21:59:26,348 [main] com.keywords.Keywords 
+  INFO  Chrome : browser has been launched successfully
+2022-Oct-06 21:59:29,175 [main] com.keywords.Keywords 
+  INFO  https://www.urbanladder.com/ : url is launched
+2022-Oct-06 21:59:29,228 [main] com.pages.LoginPage 
+  INFO  Hovered on Profile Icon
+2022-Oct-06 21:59:30,481 [main] com.pages.LoginPage 
+  INFO  Clicked On Login Button
+2022-Oct-06 21:59:33,581 [main] com.pages.LoginPage 
+  INFO  Username is entered
+2022-Oct-06 21:59:33,656 [main] com.pages.LoginPage 
+  INFO  Password is entered
+2022-Oct-06 21:59:34,941 [main] com.pages.LoginPage 
+  INFO  Login successful

@@ -7,14 +7,14 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.keywords.UIKeywords;
+import com.keywords.Keywords;
 
 public class DealZone {
 	/*
 	 * Constructor
 	 */
 	public DealZone() {
-		PageFactory.initElements(UIKeywords.driver, this);
+		PageFactory.initElements(Keywords.driver, this);
 	}
 
 	/*
@@ -31,7 +31,7 @@ public class DealZone {
 	 * ==========================Methods==================
 	 */
 	public void hoverOnDeal() throws InterruptedException {
-		UIKeywords.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		Keywords.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		DealZone.click();
 	}
 	public String getData() {
@@ -41,13 +41,13 @@ public class DealZone {
 	}
 	public void clickOnIrresistiblyGoodDeals() {
 		IrresistiblyGoodDeals.click();
-		UIKeywords.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		Keywords.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	}
 	public void tickExcludeCheckBox() {
-		UIKeywords.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		Keywords.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		close.click();
 		ExcludeCheckbox.click();
-		UIKeywords.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		Keywords.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	}
 	public void checkIfInStockOptionIsDisplayed() {
 		Boolean result = InStock.isDisplayed();
