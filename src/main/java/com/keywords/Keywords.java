@@ -1,10 +1,13 @@
 package com.keywords;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -38,5 +41,12 @@ public class Keywords {
 
 	public static void closeBrowser() {
 		driver.close();
+		log.info("Browser is closed");
 	}
+	public static void hoverOnImage(WebElement WebElement) {
+		Actions act = new Actions(Keywords.driver); 
+		act.moveToElement(WebElement);
+		log.info("Product is highlighted");
+	}
+	
 }
