@@ -1,7 +1,11 @@
 package com.keywords;
 
+import java.awt.AWTException;
+
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -48,5 +52,12 @@ public class Keywords {
 		act.moveToElement(WebElement);
 		log.info("Product is highlighted");
 	}
+	public static void keyPress() throws AWTException, InterruptedException {
+		Robot robo = new Robot();
+		robo.keyPress(KeyEvent.VK_ENTER);
+		robo.keyRelease(KeyEvent.VK_ENTER);
+		Thread.sleep(5000);
+	}
+	
 	
 }

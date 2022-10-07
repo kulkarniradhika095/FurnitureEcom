@@ -1,0 +1,1 @@
+{"uuid":"b30c3a09-afbb-45be-a094-0a317a040c37","name":"com.base.BaseForTestNg.setUp","children":["b00e29ef-bc03-4082-b02d-7a915690f217"],"description":"","befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1665121152951,"stop":1665121159348}],"afters":[],"start":1665121152951,"stop":1665121159349}
