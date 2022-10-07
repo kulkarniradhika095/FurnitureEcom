@@ -28,4 +28,44 @@ public class LivingRoomTests extends BaseForTestNg {
 		living.clickOnViewOptions();
 		wait.time(2);
 	}
+	@Test
+	public void loadCoffeeTablePage() throws SocketTimeoutException, SocketException, InterruptedException {
+		Keywords.launchUrl(FileRead.url);
+		LoginTests login = new LoginTests();
+		login.verifyIfLoginIsTakingPlaceSuccessfully();
+		LivingRoomPage living = new LivingRoomPage();
+		living.hoverOnLiving();
+		living.clickOnCoffeeTable();
+	}
+	@Test
+	public void sortByLowToHigh() throws SocketTimeoutException, SocketException, InterruptedException {
+		loadCoffeeTablePage();
+		LivingRoomPage living = new LivingRoomPage();
+		living.selectSortByLowToHigh();
+		
+	}
+	@Test
+	public void sortByDiscount() throws SocketTimeoutException, SocketException, InterruptedException {
+		loadCoffeeTablePage();
+		LivingRoomPage living = new LivingRoomPage();
+		living.selectSortByDiscount();
+	}
+	@Test
+	public void sortByHighToLow() throws SocketTimeoutException, SocketException, InterruptedException {
+		loadCoffeeTablePage();
+		LivingRoomPage living = new LivingRoomPage();
+		living.selectSortByHighToLow();
+	}
+	@Test
+	public void sortByRecommended() throws SocketTimeoutException, SocketException, InterruptedException {
+		loadCoffeeTablePage();
+		LivingRoomPage living = new LivingRoomPage();
+		living.selectSortByRecommeneded();
+	}
+	@Test
+	public void sorByNewArrivals() throws SocketTimeoutException, SocketException, InterruptedException {
+		loadCoffeeTablePage();
+		LivingRoomPage living = new LivingRoomPage();
+		living.selectSortByNewArrivals();
+	}
 }

@@ -34,7 +34,7 @@ public class LoginPage {
 	@FindBy(xpath = "//a[@id=\"facebook_login\"]") public WebElement facebookLogin;
 	@FindBy(xpath = "//a[@id=\"google_login\"]")public WebElement googleLogin;
 	@FindBy(xpath = "//a[@class=\"forget-password link-color\"]")public WebElement forgotPassword;
-	@FindBy(xpath = "//a[@class=\"close-reveal-modal hide-mobile\"]")public WebElement close;
+	@FindBy(xpath = "//a[@class=\"close-reveal-modal hide-mobile\"]")public static WebElement close;
 	
 	
 	
