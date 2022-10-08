@@ -1,16 +1,17 @@
 package com.pages;
 
 import org.apache.log4j.Logger;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.keywords.Keywords;
+import com.keywords.Keyword;
 
 public class LivingRoomPage {
 	private static final Logger log = Logger.getLogger(LivingRoomPage.class);
 	public LivingRoomPage() {
-		PageFactory.initElements(Keywords.driver, this);
+		PageFactory.initElements(Keyword.driver, this);
 	}
 	@FindBy(xpath = "//li[@class=\"topnav_item livingunit\"]") public WebElement Living;
 	@FindBy(xpath = "//a[@href=\"/coffee-table?src=g_topnav_living_tables_coffee-tables\"]") public WebElement coffeeTable;
@@ -35,7 +36,6 @@ public class LivingRoomPage {
 	}
 	public void hoveredOnImage() throws InterruptedException {
 		Thread.sleep(3000);
-		Keywords.hoverOnImage(coffeeTable1);
 		Thread.sleep(3000);
 	}
 	public void clickOnViewOptions() throws InterruptedException {

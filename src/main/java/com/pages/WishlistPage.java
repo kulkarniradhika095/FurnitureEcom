@@ -1,19 +1,18 @@
 package com.pages;
 
 import org.apache.log4j.Logger;
+
 import org.openqa.selenium.WebElement;
 
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.dataDriven.FileRead;
-import com.keywords.Keywords;
+import com.keywords.Keyword;
 
 public class WishlistPage{
 	private static final Logger log = Logger.getLogger(LoginPage.class);
-	public WishlistPage() {
-		PageFactory.initElements(Keywords.driver, this);
-	}
+	
 	
 	@FindBy(xpath = "//div[@id=\"shortlist-badge\"]") public WebElement wishlistIcon;
 	@FindBy(xpath = "//a[@class=\"login-link link-color\"]") public WebElement loginBottom;
@@ -23,7 +22,9 @@ public class WishlistPage{
 	@FindBy(xpath = "//a[@class=\"show-password link-color small\"]") public WebElement showPassword;
 	@FindBy(xpath = "//a[@class=\"hide-password link-color small\"]") public WebElement hidePassword;
 	
-
+	public WishlistPage() {
+		PageFactory.initElements(Keyword.driver, this);
+	}
 	public void clickOnwishlistIcon() throws InterruptedException {
 		wishlistIcon.click();
 		log.info("Clicked on Wishlist Icon");

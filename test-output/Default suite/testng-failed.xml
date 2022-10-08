@@ -3,13 +3,33 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.pageTests.SearchTests">
+      <class name="com.pageTests.LivingRoomTests">
+        <methods>
+          <include name="verifyIfLivingRoomDropBoxOpensAndComparesSelectedItems"/>
+          <include name="sortByDiscount"/>
+          <include name="sortByLowToHigh"/>
+          <include name="tearDown"/>
+          <include name="sortByRecommended"/>
+          <include name="setUp"/>
+          <include name="sortByHighToLow"/>
+          <include name="sorByNewArrivals"/>
+        </methods>
+      </class> <!-- com.pageTests.LivingRoomTests -->
+      <class name="com.pageTests.CartTests">
         <methods>
           <include name="tearDown"/>
+          <include name="verifyCartPageLogin"/>
           <include name="setUp"/>
-          <include name="checkIfInvalidSymbolsDeniedBySearchBar"/>
         </methods>
-      </class> <!-- com.pageTests.SearchTests -->
+      </class> <!-- com.pageTests.CartTests -->
+      <class name="com.pageTests.LoginTests">
+        <methods>
+          <include name="verifyIfFacebookAndGooglePageIsRedirecting"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="verifyIfCloseButtonIsWorking"/>
+        </methods>
+      </class> <!-- com.pageTests.LoginTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

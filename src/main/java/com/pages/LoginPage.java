@@ -2,6 +2,8 @@ package com.pages;
 
 import org.apache.log4j.Logger;
 
+
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
@@ -9,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.configuration.WaitFor;
 import com.dataDriven.FileRead;
-import com.keywords.Keywords;
+import com.keywords.Keyword;
 
 
 public class LoginPage {
@@ -19,7 +21,7 @@ public class LoginPage {
 	 * ===============================================================Constructor========================================================================
 	 */
 	public LoginPage() {
-		PageFactory.initElements(Keywords.driver,this);
+		PageFactory.initElements(Keyword.driver, this);
 	}
 	/*
 	 * ==================================================================Xpaths==========================================================================
@@ -45,15 +47,14 @@ public class LoginPage {
 	public void clickOnProfileIcon() {
 		profileIcon.click();
 		log.info("Hovered on Profile Icon");
-		WaitFor wait = new WaitFor();
 	}
 	public void clickOnLoginButton() {
-		WaitFor wait = new WaitFor();
+		WaitFor.time(3);
 		loginIcon.click();
 		log.info("Clicked On Login Button");
-		wait.time(3);
 	}
 	public void enterEmail() {
+		WaitFor.time(3);
 		username.sendKeys(FileRead.EMAIL);
 		log.info("Username is entered");
 	}
