@@ -2,23 +2,25 @@ package com.pageTests;
 
 import java.net.SocketException;
 
+
+
 import java.net.SocketTimeoutException;
 
-import org.apache.log4j.Logger;
 import org.testng.annotations.Test;
 
 import com.base.BaseForTestNg;
+import com.configuration.WaitFor;
 import com.dataDriven.FileRead;
-import com.keywords.Keywords;
+import com.keywords.Keyword;
 import com.pages.LoginPage;
 
 
 public class LoginTests extends BaseForTestNg{
-	private static final Logger log = Logger.getLogger(LoginTests.class);
 	@Test
 	public void verifyIfLoginIsTakingPlaceSuccessfully()throws SocketException, SocketTimeoutException {
-		Keywords.launchUrl(FileRead.url);
+		Keyword.launchUrl(FileRead.url);
 		LoginPage profile = new LoginPage();
+		WaitFor.time(3);
 		profile.clickOnProfileIcon();
 		profile.clickOnLoginButton();
 		profile.enterEmail();
@@ -27,7 +29,7 @@ public class LoginTests extends BaseForTestNg{
 	}
 	@Test
 	public void verifyIfFacebookAndGooglePageIsRedirecting() {
-		Keywords.launchUrl(FileRead.url);
+		Keyword.launchUrl(FileRead.url);
 		LoginPage profile = new LoginPage();
 		profile.clickOnProfileIcon();
 		profile.clickOnLoginButton();
@@ -44,7 +46,7 @@ public class LoginTests extends BaseForTestNg{
 	}
 	@Test
 	public void verifyIfCloseButtonIsWorking() {
-		Keywords.launchUrl(FileRead.url);
+		Keyword.launchUrl(FileRead.url);
 		LoginPage profile = new LoginPage();
 		profile.clickOnProfileIcon();
 		profile.clickOnLoginButton();
