@@ -3,8 +3,8 @@ package com.pageTests;
 import java.net.SocketException;
 
 
+
 import java.net.SocketTimeoutException;
-import java.util.List;
 
 import org.testng.annotations.Test;
 
@@ -25,7 +25,6 @@ public class LivingRoomTests extends BaseForTestNg {
 		living.hoverOnLiving();
 		living.clickOnCoffeeTable();
 		living.hoveredOnImage();
-		living.clickOnViewOptions();
 	}
 	@Test
 	public void loadCoffeeTablePage() throws SocketTimeoutException, SocketException, InterruptedException {
@@ -71,10 +70,11 @@ public class LivingRoomTests extends BaseForTestNg {
 	@Test
 	public void verifyIfLivingCatalogProductListIsDisplayed() throws InterruptedException {
 		Keyword.launchUrl(FileRead.url);
-		Keyword.Login();
+		//Keyword.Login();
 		LivingRoomPage living = new LivingRoomPage();
 		living.hoverOnLiving();
-		List<String> products =living.getProductList();
-		System.out.println(products);
+		WaitFor.time(5);
+		String prod = living.getProductList();
+		System.out.println(prod);
 	}
 }

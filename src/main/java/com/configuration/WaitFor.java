@@ -1,6 +1,8 @@
 package com.configuration;
 
 import java.time.Duration;
+import java.util.List;
+
 import org.openqa.selenium.support.ui.FluentWait;
 
 import org.openqa.selenium.By;
@@ -38,5 +40,10 @@ private static FluentWait<WebDriver> wait = null;
 		while (startTime<=endTime) {
 			startTime = System.currentTimeMillis();
 		}
+	}
+
+	public static void elementToBePresent(List<WebElement> element) {
+		wait.ignoring(NoSuchElementException.class);
+		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy((By) element));
 	}
 }

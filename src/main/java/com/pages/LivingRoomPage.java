@@ -1,15 +1,14 @@
 package com.pages;
 
-import java.util.List;
+
 
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.configuration.WaitFor;
 import com.keywords.Keyword;
 
 
@@ -18,7 +17,8 @@ public class LivingRoomPage extends Keyword {
 	public LivingRoomPage() {
 		PageFactory.initElements(driver, this);
 	}
-	By LivingRoomProductsBy = By.xpath("//ul[@class=\\\"inline-list left\\\"]");
+	@FindBy(xpath = "//a[@href=\"/top-deals?src=g_topnav_deal-zone_top-deals\"]") public WebElement ele;
+	@FindBy(xpath = "//ul[@class=\"inline-list left\"]")public WebElement LivingRoomProductsBy;
 	@FindBy(xpath = "//li[@class=\"topnav_item livingunit\"]") public WebElement Living;
 	@FindBy(xpath = "//a[@href=\"/coffee-table?src=g_topnav_living_tables_coffee-tables\"]") public WebElement coffeeTable;
 	@FindBy(xpath = "//img[@class=\"product-img-default\"]") public WebElement coffeeTable1;
@@ -31,8 +31,7 @@ public class LivingRoomPage extends Keyword {
 	@FindBy(xpath = "//li[contains(text(),'Price: High to Low')]")public WebElement highToLow;
 	
 	public void hoverOnLiving() throws InterruptedException {
-		Thread.sleep(2000);
-		Living.click();
+		Keyword.goToPage(Living);
 		log.info("hovered on LivingRoom Tab");
 	}
 	public void clickOnCoffeeTable() throws InterruptedException {
@@ -45,49 +44,36 @@ public class LivingRoomPage extends Keyword {
 		coffeeTable1.click();
 		Thread.sleep(3000);
 	}
-	public void clickOnViewOptions() throws InterruptedException {
-		Thread.sleep(3000);
-		coffeeTable1Options.click();
+	public void goToCoffeeTablePage() {
+		Keyword.goToPage(coffeeTable1Options);
 	}
 	public void selectSortByRecommeneded() throws InterruptedException {
-		sortBy.click();
-		Thread.sleep(2000);
-		recommeneded.click();
+		Keyword.sortBy(sortBy, recommeneded);
 		log.info("Coffee-Table page is sorted according to recommeneded products");
 	}
 	public void selectSortByDiscount() throws InterruptedException {
-		sortBy.click();
-		Thread.sleep(2000);
-		discount.click();
+		Keyword.sortBy(sortBy, discount);
 		log.info("Coffee-Table page is sorted according to discounted products");
 	}
 	public void selectSortByLowToHigh() throws InterruptedException {
-		sortBy.click();
-		Thread.sleep(2000);
-		lowToHigh.click();
+		Keyword.sortBy(sortBy, lowToHigh);
 		log.info("Coffee-Table page is sorted according to low to high price");
 	}
 	public void selectSortByNewArrivals() throws InterruptedException {
-		sortBy.click();
-		Thread.sleep(2000);
-		newArrivals.click();
+		Keyword.sortBy(sortBy, newArrivals);
 		log.info("Coffee-Table page is sorted according to new arrivals");
 	}
 	public void selectSortByHighToLow() throws InterruptedException {
-		sortBy.click();
-		Thread.sleep(2000);
-		highToLow.click();
+		Keyword.sortBy(sortBy, highToLow);
 		log.info("Coffee-Table page is sorted according to high to low price");
 	}
-	public List<String> getProductList() { 
-		WaitFor.elementToBePresent(LivingRoomProductsBy);
-		List<String> prod= Keyword.getListOfElementsSold(LivingRoomProductsBy);
-		System.out.println(prod);
-		return prod;
+	public String getProductList() {
+		String products = LivingRoomProductsBy.getText();
+		System.out.println(products);
+		return Keyword.getProductsList(LivingRoomProductsBy);
 	}
-	public void getProductByItsName() {
-		
-	}
+	
+	
 	
 	
 }
