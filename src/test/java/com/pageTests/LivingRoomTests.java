@@ -2,7 +2,9 @@ package com.pageTests;
 
 import java.net.SocketException;
 
+
 import java.net.SocketTimeoutException;
+import java.util.List;
 
 import org.testng.annotations.Test;
 
@@ -65,5 +67,14 @@ public class LivingRoomTests extends BaseForTestNg {
 		loadCoffeeTablePage();
 		LivingRoomPage living = new LivingRoomPage();
 		living.selectSortByNewArrivals();
+	}
+	@Test
+	public void verifyIfLivingCatalogProductListIsDisplayed() throws InterruptedException {
+		Keyword.launchUrl(FileRead.url);
+		Keyword.Login();
+		LivingRoomPage living = new LivingRoomPage();
+		living.hoverOnLiving();
+		List<String> products =living.getProductList();
+		System.out.println(products);
 	}
 }

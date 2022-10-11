@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import com.base.BaseForTestNg;
 import com.keywords.Keyword;
 
-public class DealZone extends BaseForTestNg {
+public class DealZone extends Keyword {
 	/*
 	 * =======================Xpaths/css=================
 	 */
@@ -25,7 +25,7 @@ public class DealZone extends BaseForTestNg {
 	 * ==========================Methods==================
 	 */
 	public DealZone() {
-		PageFactory.initElements(Keyword.driver,this);
+		PageFactory.initElements(driver,this);
 	}
 	public void hoverOnDeal() throws InterruptedException {
 		Keyword.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));

@@ -5,31 +5,11 @@
     <classes>
       <class name="com.pageTests.LivingRoomTests">
         <methods>
-          <include name="verifyIfLivingRoomDropBoxOpensAndComparesSelectedItems"/>
-          <include name="sortByDiscount"/>
-          <include name="sortByLowToHigh"/>
           <include name="tearDown"/>
-          <include name="sortByRecommended"/>
           <include name="setUp"/>
-          <include name="sortByHighToLow"/>
-          <include name="sorByNewArrivals"/>
+          <include name="verifyIfLivingCatalogProductListIsDisplayed"/>
         </methods>
       </class> <!-- com.pageTests.LivingRoomTests -->
-      <class name="com.pageTests.CartTests">
-        <methods>
-          <include name="tearDown"/>
-          <include name="verifyCartPageLogin"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.pageTests.CartTests -->
-      <class name="com.pageTests.LoginTests">
-        <methods>
-          <include name="verifyIfFacebookAndGooglePageIsRedirecting"/>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-          <include name="verifyIfCloseButtonIsWorking"/>
-        </methods>
-      </class> <!-- com.pageTests.LoginTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

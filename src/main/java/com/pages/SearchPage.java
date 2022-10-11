@@ -11,13 +11,13 @@ import org.openqa.selenium.support.PageFactory;
 import com.keywords.Keyword;
 
 
-public class SearchPage{
+public class SearchPage extends Keyword{
 	private static final Logger log = Logger.getLogger(SearchPage.class);
 	@FindBy(xpath = "//input[@class=\"typeahead tt-input\"]") public WebElement searchBar;
 	@FindBy(xpath = "//span[@class=\"search-icon icofont-search\"]") public WebElement searchMagnifier;
 	
 	public SearchPage() {
-		PageFactory.initElements(Keyword.driver, this);
+		PageFactory.initElements(driver, this);
 	}
 	public void enterSymbol() {
 		JavascriptExecutor jse = (JavascriptExecutor)Keyword.driver; 

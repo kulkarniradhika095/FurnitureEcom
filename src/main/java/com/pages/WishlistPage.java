@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import com.dataDriven.FileRead;
 import com.keywords.Keyword;
 
-public class WishlistPage{
+public class WishlistPage extends Keyword{
 	private static final Logger log = Logger.getLogger(LoginPage.class);
 	
 	
@@ -23,7 +23,7 @@ public class WishlistPage{
 	@FindBy(xpath = "//a[@class=\"hide-password link-color small\"]") public WebElement hidePassword;
 	
 	public WishlistPage() {
-		PageFactory.initElements(Keyword.driver, this);
+		PageFactory.initElements(driver, this);
 	}
 	public void clickOnwishlistIcon() throws InterruptedException {
 		wishlistIcon.click();

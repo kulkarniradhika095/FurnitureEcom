@@ -1,20 +1,2 @@
-2022-Oct-08 08:36:03,045 [main] com.pages.LoginPage 
-  INFO  Clicked On Login Button
-2022-Oct-08 08:36:06,174 [main] com.pages.LoginPage 
-  INFO  Username is entered
-2022-Oct-08 08:36:06,256 [main] com.pages.LoginPage 
-  INFO  Password is entered
-2022-Oct-08 08:36:07,002 [main] com.pages.LoginPage 
-  INFO  Login successful
-2022-Oct-08 08:36:07,894 [main] com.pages.CartPage 
-  INFO  Clicked on cart icon
-2022-Oct-08 08:36:12,220 [main] com.pages.CartPage 
-  INFO  Clicked on continue shopping icon
-2022-Oct-08 08:36:13,496 [main] com.keywords.Keyword 
-  INFO  https://www.urbanladder.com/ : url is launched
-2022-Oct-08 08:36:14,503 [main] com.keywords.Keyword 
-  INFO  https://www.urbanladder.com/ : url is launched
-2022-Oct-08 08:36:17,553 [main] com.pages.LoginPage 
-  INFO  Hovered on Profile Icon
-2022-Oct-08 08:36:20,718 [main] com.keywords.Keyword 
+2022-Oct-11 12:03:04,281 [main] com.keywords.Keyword 
   INFO  Browser is closed
