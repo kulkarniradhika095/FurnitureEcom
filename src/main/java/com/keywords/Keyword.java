@@ -1,12 +1,19 @@
 package com.keywords;
 
-import org.apache.log4j.Logger;
+import java.util.ArrayList;
+import java.util.List;
 
+import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
+
+import com.dataDriven.FileRead;
+import com.pages.LoginPage;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -38,6 +45,19 @@ public class Keyword {
 	public static void closeBrowser() {
 		driver.close();
 		log.info("Browser is closed");
+	}
+	public static void Login() {
+		launchUrl(FileRead.url);
+		LoginPage login = new LoginPage();
+		login.verifyIfLoginIsProcessingSuccessfully(FileRead.EMAIL, FileRead.PASSWORD);
+	}
+	public static List<String> getListOfElementsSold(By element) {
+		List<WebElement> elements = driver.findElements(element);
+		List<String> texts = new ArrayList<String>();
+		for (WebElement webElement : elements) {
+			log.info(webElement.getText());
+		}
+		return texts;
 	}
 	
 }

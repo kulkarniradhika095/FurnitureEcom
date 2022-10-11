@@ -19,20 +19,14 @@ public class LoginTests extends BaseForTestNg{
 	@Test
 	public void verifyIfLoginIsTakingPlaceSuccessfully()throws SocketException, SocketTimeoutException {
 		Keyword.launchUrl(FileRead.url);
-		LoginPage profile = new LoginPage();
 		WaitFor.time(3);
-		profile.clickOnProfileIcon();
-		profile.clickOnLoginButton();
-		profile.enterEmail();
-		profile.enterPassword();
-		profile.login();
+		Keyword.Login();
 	}
 	@Test
 	public void verifyIfFacebookAndGooglePageIsRedirecting() {
 		Keyword.launchUrl(FileRead.url);
 		LoginPage profile = new LoginPage();
-		profile.clickOnProfileIcon();
-		profile.clickOnLoginButton();
+		Keyword.Login();
 		//String Page = "Facebook";
 		String Page = "Google";
 		switch (Page) {
@@ -48,8 +42,7 @@ public class LoginTests extends BaseForTestNg{
 	public void verifyIfCloseButtonIsWorking() {
 		Keyword.launchUrl(FileRead.url);
 		LoginPage profile = new LoginPage();
-		profile.clickOnProfileIcon();
-		profile.clickOnLoginButton();
+		Keyword.Login();
 		profile.clickOnCloseButton();
 	}
 }

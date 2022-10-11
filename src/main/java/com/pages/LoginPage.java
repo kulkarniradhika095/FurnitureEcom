@@ -10,18 +10,17 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.configuration.WaitFor;
-import com.dataDriven.FileRead;
 import com.keywords.Keyword;
 
 
-public class LoginPage {
+public class LoginPage extends Keyword{
 	
 	private static final Logger log = Logger.getLogger(LoginPage.class);
 	/*
 	 * ===============================================================Constructor========================================================================
 	 */
 	public LoginPage() {
-		PageFactory.initElements(Keyword.driver, this);
+		PageFactory.initElements(driver, this);
 	}
 	/*
 	 * ==================================================================Xpaths==========================================================================
@@ -38,9 +37,6 @@ public class LoginPage {
 	@FindBy(xpath = "//a[@class=\"forget-password link-color\"]")public WebElement forgotPassword;
 	@FindBy(xpath = "//a[@class=\"close-reveal-modal hide-mobile\"]")public static WebElement close;
 	
-	
-	
-	
 	/*
 	 * =================================================================Methods==========================================================================
 	 */
@@ -48,24 +44,21 @@ public class LoginPage {
 		profileIcon.click();
 		log.info("Hovered on Profile Icon");
 	}
-	public void clickOnLoginButton() {
+	public void verifyIfLoginIsProcessingSuccessfully(String Email , String Password) {
+		profileIcon.click();
 		WaitFor.time(3);
 		loginIcon.click();
 		log.info("Clicked On Login Button");
-	}
-	public void enterEmail() {
 		WaitFor.time(3);
-		username.sendKeys(FileRead.EMAIL);
+		username.sendKeys(Email);
 		log.info("Username is entered");
-	}
-	public void enterPassword() {
-		password.sendKeys(FileRead.PASSWORD);
+		password.sendKeys(Password);
 		log.info("Password is entered");
-	}
-	public void login() {
+		WaitFor.time(3);
 		loginButton.click();
 		log.info("Login successful");
 	}
+	
 	public void clickOnCloseButton() {
 		close.click();
 		log.info("Login/SignUp Window is closed");
