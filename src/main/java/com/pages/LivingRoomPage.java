@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.configuration.WaitFor;
 import com.keywords.Keyword;
 
 
@@ -17,7 +18,7 @@ public class LivingRoomPage extends Keyword {
 	public LivingRoomPage() {
 		PageFactory.initElements(driver, this);
 	}
-	@FindBy(xpath = "//a[@href=\"/top-deals?src=g_topnav_deal-zone_top-deals\"]") public WebElement ele;
+	@FindBy(xpath = "//a[contains(text(),'Close')]")public WebElement closeButtonLoginPage;
 	@FindBy(xpath = "//ul[@class=\"inline-list left\"]")public WebElement LivingRoomProductsBy;
 	@FindBy(xpath = "//li[@class=\"topnav_item livingunit\"]") public WebElement Living;
 	@FindBy(xpath = "//a[@href=\"/coffee-table?src=g_topnav_living_tables_coffee-tables\"]") public WebElement coffeeTable;
@@ -31,6 +32,7 @@ public class LivingRoomPage extends Keyword {
 	@FindBy(xpath = "//li[contains(text(),'Price: High to Low')]")public WebElement highToLow;
 	
 	public void hoverOnLiving() throws InterruptedException {
+		WaitFor.time(5);
 		Keyword.goToPage(Living);
 		log.info("hovered on LivingRoom Tab");
 	}
@@ -40,9 +42,8 @@ public class LivingRoomPage extends Keyword {
 		log.info("Coffee-Table page is opened");
 	}
 	public void hoveredOnImage() throws InterruptedException {
-		Thread.sleep(3000);
+		WaitFor.time(3);
 		coffeeTable1.click();
-		Thread.sleep(3000);
 	}
 	public void goToCoffeeTablePage() {
 		Keyword.goToPage(coffeeTable1Options);
@@ -71,6 +72,10 @@ public class LivingRoomPage extends Keyword {
 		String products = LivingRoomProductsBy.getText();
 		System.out.println(products);
 		return Keyword.getProductsList(LivingRoomProductsBy);
+	}
+	public void clickOnCloseButton() {
+		WaitFor.time(5);
+		closeButtonLoginPage.click();
 	}
 	
 	

@@ -44,11 +44,7 @@ public class Keyword {
 		driver.close();
 		log.info("Browser is closed");
 	}
-	public static void Login() {
-		launchUrl(FileRead.url);
-		LoginPage login = new LoginPage();
-		login.verifyIfLoginIsProcessingSuccessfully(FileRead.EMAIL, FileRead.PASSWORD);
-	}
+	
 	public static String getProductsList(WebElement element) {
 		return element.getText();
 	}
@@ -61,4 +57,5 @@ public class Keyword {
 		Thread.sleep(2000);
 		element1.click();
 	}
+	
 }

@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.pageTests.LoginTests">
+      <class name="com.pageTests.LivingRoomTests">
         <methods>
+          <include name="verifyIfLivingRoomDropBoxOpensAndComparesSelectedItems"/>
           <include name="tearDown"/>
-          <include name="verifyIfLoginIsTakingPlaceSuccessfully"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- com.pageTests.LoginTests -->
+      </class> <!-- com.pageTests.LivingRoomTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

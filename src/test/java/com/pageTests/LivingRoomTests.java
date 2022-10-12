@@ -19,11 +19,12 @@ public class LivingRoomTests extends BaseForTestNg {
 	@Test
 	public void verifyIfLivingRoomDropBoxOpensAndComparesSelectedItems() throws InterruptedException, SocketTimeoutException, SocketException {
 		Keyword.launchUrl(FileRead.url);
-		LoginTests login = new LoginTests();
-		login.verifyIfLoginIsTakingPlaceSuccessfully();
+		/*LoginTests login = new LoginTests();
+		login.verifyIfLoginIsTakingPlaceSuccessfully();*/
 		LivingRoomPage living = new LivingRoomPage();
 		living.hoverOnLiving();
 		living.clickOnCoffeeTable();
+		living.clickOnCloseButton();
 		living.hoveredOnImage();
 	}
 	@Test
@@ -55,7 +56,7 @@ public class LivingRoomTests extends BaseForTestNg {
 		LivingRoomPage living = new LivingRoomPage();
 		living.selectSortByHighToLow();
 	}
-	@Test
+	@Test()
 	public void sortByRecommended() throws SocketTimeoutException, SocketException, InterruptedException {
 		loadCoffeeTablePage();
 		LivingRoomPage living = new LivingRoomPage();
