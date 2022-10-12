@@ -3,8 +3,8 @@ package com.pageTests;
 import java.net.SocketException;
 
 
+
 import java.net.SocketTimeoutException;
-import java.util.List;
 
 import org.testng.annotations.Test;
 
@@ -19,13 +19,13 @@ public class LivingRoomTests extends BaseForTestNg {
 	@Test
 	public void verifyIfLivingRoomDropBoxOpensAndComparesSelectedItems() throws InterruptedException, SocketTimeoutException, SocketException {
 		Keyword.launchUrl(FileRead.url);
-		LoginTests login = new LoginTests();
-		login.verifyIfLoginIsTakingPlaceSuccessfully();
+		/*LoginTests login = new LoginTests();
+		login.verifyIfLoginIsTakingPlaceSuccessfully();*/
 		LivingRoomPage living = new LivingRoomPage();
 		living.hoverOnLiving();
 		living.clickOnCoffeeTable();
+		living.clickOnCloseButton();
 		living.hoveredOnImage();
-		living.clickOnViewOptions();
 	}
 	@Test
 	public void loadCoffeeTablePage() throws SocketTimeoutException, SocketException, InterruptedException {
@@ -56,7 +56,7 @@ public class LivingRoomTests extends BaseForTestNg {
 		LivingRoomPage living = new LivingRoomPage();
 		living.selectSortByHighToLow();
 	}
-	@Test
+	@Test()
 	public void sortByRecommended() throws SocketTimeoutException, SocketException, InterruptedException {
 		loadCoffeeTablePage();
 		LivingRoomPage living = new LivingRoomPage();
@@ -71,10 +71,11 @@ public class LivingRoomTests extends BaseForTestNg {
 	@Test
 	public void verifyIfLivingCatalogProductListIsDisplayed() throws InterruptedException {
 		Keyword.launchUrl(FileRead.url);
-		Keyword.Login();
+		//Keyword.Login();
 		LivingRoomPage living = new LivingRoomPage();
 		living.hoverOnLiving();
-		List<String> products =living.getProductList();
-		System.out.println(products);
+		WaitFor.time(5);
+		String prod = living.getProductList();
+		System.out.println(prod);
 	}
 }

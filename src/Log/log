@@ -1,2 +1,12 @@
-2022-Oct-11 12:03:04,281 [main] com.keywords.Keyword 
+2022-Oct-12 12:04:11,487 [main] com.keywords.Keyword 
+  INFO  Chrome browser has launched successfully..!
+2022-Oct-12 12:04:12,715 [main] com.keywords.Keyword 
+  INFO  https://www.urbanladder.com/ : url is launched
+2022-Oct-12 12:04:17,883 [main] com.keywords.Keyword 
+  INFO  Reloaded to Living page
+2022-Oct-12 12:04:17,883 [main] com.pages.LivingRoomPage 
+  INFO  hovered on LivingRoom Tab
+2022-Oct-12 12:04:22,327 [main] com.pages.LivingRoomPage 
+  INFO  Coffee-Table page is opened
+2022-Oct-12 12:04:30,737 [main] com.keywords.Keyword 
   INFO  Browser is closed

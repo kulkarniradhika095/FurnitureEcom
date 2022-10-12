@@ -1,10 +1,8 @@
 package com.keywords;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -46,18 +44,18 @@ public class Keyword {
 		driver.close();
 		log.info("Browser is closed");
 	}
-	public static void Login() {
-		launchUrl(FileRead.url);
-		LoginPage login = new LoginPage();
-		login.verifyIfLoginIsProcessingSuccessfully(FileRead.EMAIL, FileRead.PASSWORD);
+	
+	public static String getProductsList(WebElement element) {
+		return element.getText();
 	}
-	public static List<String> getListOfElementsSold(By element) {
-		List<WebElement> elements = driver.findElements(element);
-		List<String> texts = new ArrayList<String>();
-		for (WebElement webElement : elements) {
-			log.info(webElement.getText());
-		}
-		return texts;
+	public static void goToPage(WebElement element) {
+		element.click();
+		log.info("Reloaded to "+element.getText()+" page");
+	}
+	public static void sortBy(WebElement element, WebElement element1) throws InterruptedException {
+		element.click();
+		Thread.sleep(2000);
+		element1.click();
 	}
 	
 }

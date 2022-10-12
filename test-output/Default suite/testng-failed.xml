@@ -5,9 +5,9 @@
     <classes>
       <class name="com.pageTests.LivingRoomTests">
         <methods>
+          <include name="verifyIfLivingRoomDropBoxOpensAndComparesSelectedItems"/>
           <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="verifyIfLivingCatalogProductListIsDisplayed"/>
         </methods>
       </class> <!-- com.pageTests.LivingRoomTests -->
     </classes>

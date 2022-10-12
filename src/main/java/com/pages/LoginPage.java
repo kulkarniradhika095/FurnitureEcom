@@ -10,6 +10,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.configuration.WaitFor;
+import com.dataDriven.FileRead;
 import com.keywords.Keyword;
 
 
@@ -26,9 +27,10 @@ public class LoginPage extends Keyword{
 	 * ==================================================================Xpaths==========================================================================
 	 */
 	@CacheLookup
+	@FindBy(xpath = "//div[@class=\"popup-text text-center vert large-6 columns\"]")public WebElement signUpLoginText;
 	@FindBy(xpath = "//span[@class=\"header-icon-link user-profile-icon\"]") public WebElement profileIcon;
-	@FindBy(xpath = "//a[@class=\"login-link authentication_popup\"]")public WebElement loginIcon;
-	@FindBy(xpath = "//a[@class=\"signup-link authentication_popup\"]")public WebElement signUp;
+	@FindBy(xpath = "//a[contains(text(),'Log In')]")public WebElement loginIcon;
+	@FindBy(xpath = "//a[contains(text(),'Sign Up')]")public WebElement signUp;
 	@FindBy(xpath = "//input[@class=\"email required input_authentication\"]") public WebElement username;
 	@FindBy(xpath = "//input[@class=\"required input_authentication\"]") public WebElement password;
 	@FindBy(xpath = "//input[@class=\"button primary\"]") public WebElement loginButton;
@@ -44,15 +46,15 @@ public class LoginPage extends Keyword{
 		profileIcon.click();
 		log.info("Hovered on Profile Icon");
 	}
-	public void verifyIfLoginIsProcessingSuccessfully(String Email , String Password) {
+	public void verifyIfLoginIsProcessingSuccessfully() {
 		profileIcon.click();
 		WaitFor.time(3);
 		loginIcon.click();
 		log.info("Clicked On Login Button");
-		WaitFor.time(3);
-		username.sendKeys(Email);
+		WaitFor.time(5);
+		username.sendKeys(FileRead.EMAIL);
 		log.info("Username is entered");
-		password.sendKeys(Password);
+		password.sendKeys(FileRead.PASSWORD);
 		log.info("Password is entered");
 		WaitFor.time(3);
 		loginButton.click();
@@ -62,6 +64,34 @@ public class LoginPage extends Keyword{
 	public void clickOnCloseButton() {
 		close.click();
 		log.info("Login/SignUp Window is closed");
+	}
+	public void loadLoginPage() {
+		profileIcon.click();
+		log.info("Hovered on Profile Icon");
+		WaitFor.time(3);
+		loginIcon.click();
+		log.info("Clicked On Login Button");
+		WaitFor.time(5);
+	}
+	public void loadSignUpPage() {
+		profileIcon.click();
+		log.info("Hovered on Profile Icon");
+		WaitFor.time(3);
+		signUp.click();
+		log.info("Clicked On SignUp Button");
+		WaitFor.time(5);		
+	}
+	public void printSignupText() {
+		loadSignUpPage();
+		WaitFor.time(3);
+		String text= signUpLoginText.getText();
+		log.info(text);
+	}
+	public void printLoginText() {
+		loadLoginPage();
+		WaitFor.time(3);
+		String text= signUpLoginText.getText();
+		System.out.println(text);
 	}
 	
 }
