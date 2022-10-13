@@ -23,6 +23,6 @@ public class CartTests extends BaseForTestNg{
 		Thread.sleep(3000);
 		cart.clickOnContinueShopping();
 		LivingRoomTests living = new LivingRoomTests();
-		living.verifyIfLivingRoomDropBoxOpensAndComparesSelectedItems();
+		living.verifyIfLivingRoomDropBoxOpens();
 	}
 }
