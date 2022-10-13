@@ -2,12 +2,13 @@ package com.pages;
 
 import org.apache.log4j.Logger;
 
+
 import org.openqa.selenium.WebElement;
 
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.dataDriven.FileRead;
+import com.dataDriven.Environment;
 import com.keywords.Keyword;
 
 public class WishlistPage extends Keyword{
@@ -31,11 +32,11 @@ public class WishlistPage extends Keyword{
 		Thread.sleep(3000);
 	}
 	public void enterEmail() {
-		cartUsername.sendKeys(FileRead.EMAIL);
+		cartUsername.sendKeys(Environment.EMAIL);
 		log.info("Entered Email");
 	}
 	public void enterPassword() {
-		cartPassword.sendKeys(FileRead.PASSWORD);
+		cartPassword.sendKeys(Environment.PASSWORD);
 		log.info("Entered Password");
 	}
 	public void clickOnShowPassword() {

@@ -4,13 +4,14 @@ import java.net.SocketException;
 
 
 
+
 import java.net.SocketTimeoutException;
 
 import org.testng.annotations.Test;
 
 import com.base.BaseForTestNg;
 import com.configuration.WaitFor;
-import com.dataDriven.FileRead;
+import com.dataDriven.Environment;
 import com.keywords.Keyword;
 import com.pages.LivingRoomPage;
 
@@ -18,7 +19,7 @@ public class LivingRoomTests extends BaseForTestNg {
 	
 	@Test
 	public void verifyIfLivingRoomDropBoxOpensAndComparesSelectedItems() throws InterruptedException, SocketTimeoutException, SocketException {
-		Keyword.launchUrl(FileRead.url);
+		Keyword.launchUrl(Environment.url);
 		/*LoginTests login = new LoginTests();
 		login.verifyIfLoginIsTakingPlaceSuccessfully();*/
 		LivingRoomPage living = new LivingRoomPage();
@@ -29,7 +30,7 @@ public class LivingRoomTests extends BaseForTestNg {
 	}
 	@Test
 	public void loadCoffeeTablePage() throws SocketTimeoutException, SocketException, InterruptedException {
-		Keyword.launchUrl(FileRead.url);
+		Keyword.launchUrl(Environment.url);
 		LoginTests login = new LoginTests();
 		WaitFor.time(3);
 		login.verifyIfLoginIsTakingPlaceSuccessfully();
@@ -70,12 +71,11 @@ public class LivingRoomTests extends BaseForTestNg {
 	}
 	@Test
 	public void verifyIfLivingCatalogProductListIsDisplayed() throws InterruptedException {
-		Keyword.launchUrl(FileRead.url);
+		Keyword.launchUrl(Environment.url);
 		//Keyword.Login();
 		LivingRoomPage living = new LivingRoomPage();
 		living.hoverOnLiving();
 		WaitFor.time(5);
-		String prod = living.getProductList();
-		System.out.println(prod);
+		living.getProductList();
 	}
 }
