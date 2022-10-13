@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="TestSuite">
+	<test thread-count="5" name="ChromeTests">
+		<parameter name="browser-name" value="Chrome">
+			<classes>
+				<class name="com.pageTests.WishlistTests" />
+				<class name="com.pageTests.LoginTests" />
+				<class name="com.pageTests.CartTests" />
+				<class name="com.base.BaseForTestNg" />
+				<class name="com.dataProviderTests.DataDrivenTests" />
+				<class name="com.pageTests.LivingRoomTests" />
+				<class name="com.base.BaseForCucumber" />
+				<class name="com.pageTests.HomeTests" />
+			</classes>
+		</parameter>
+	</test> <!-- Test -->
+	<test thread-count="5" name="EdgeTests">
+		<parameter name="browser-name" value="Edge">
+			<classes>
+				<class name="com.pageTests.WishlistTests" />
+				<class name="com.pageTests.LoginTests" />
+				<class name="com.pageTests.CartTests" />
+				<class name="com.base.BaseForTestNg" />
+				<class name="com.dataProviderTests.DataDrivenTests" />
+				<class name="com.pageTests.LivingRoomTests" />
+				<class name="com.base.BaseForCucumber" />
+				<class name="com.pageTests.HomeTests" />
+			</classes>
+		</parameter>
+	</test> <!-- Test -->
+	<test thread-count="5" name="FirefoxTests">
+		<parameter name="browser-name" value="Firefox">
+			<classes>
+				<class name="com.pageTests.WishlistTests" />
+				<class name="com.pageTests.LoginTests" />
+				<class name="com.pageTests.CartTests" />
+				<class name="com.base.BaseForTestNg" />
+				<class name="com.dataProviderTests.DataDrivenTests" />
+				<class name="com.pageTests.LivingRoomTests" />
+				<class name="com.base.BaseForCucumber" />
+				<class name="com.pageTests.HomeTests" />
+			</classes>
+		</parameter>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
+     
+
+      

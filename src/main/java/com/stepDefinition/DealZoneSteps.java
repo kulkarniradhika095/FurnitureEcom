@@ -1,8 +1,10 @@
 package com.stepDefinition;
 
-import com.dataDriven.FileRead;
+import com.dataDriven.Environment;
+
+
 import com.keywords.Keyword;
-import com.pages.DealZone;
+import com.pages.DealZonePage;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -13,26 +15,26 @@ public class DealZoneSteps {
 	
 	@Given("Open urbanLadder")
 	public void launchUrbanladder() {
-		Keyword.launchUrl(FileRead.url);
+		Keyword.launchUrl(Environment.url);
 	}
 	@When("hover on Deal Zone")
 	public void hoverOnDealZone() throws InterruptedException {
-		DealZone deal = new DealZone();
+		DealZonePage deal = new DealZonePage();
 		deal.hoverOnDeal();
 	}
 	@Given("Click on Irresistibly Good Deals")
 	public void clickOnIrresistiblyGoodDeals() {
-		DealZone deal = new DealZone();
+		DealZonePage deal = new DealZonePage();
 		deal.clickOnIrresistiblyGoodDeals();
 	}
 	@And("Click on Exclude Out Of Stock")
 	public void clickOnExcludeOutOfStock() {
-		DealZone deal = new DealZone();
+		DealZonePage deal = new DealZonePage();
 		deal.tickExcludeCheckBox();
 	}
 	@Then("Check If In Stock Option is Displayed")
 	 public void checkIfInStockOptionIsDisplayed() {
-		DealZone deal = new DealZone();
+		DealZonePage deal = new DealZonePage();
 		deal.checkIfInStockOptionIsDisplayed();
 	}
 }

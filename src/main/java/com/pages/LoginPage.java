@@ -4,13 +4,14 @@ import org.apache.log4j.Logger;
 
 
 
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.configuration.WaitFor;
-import com.dataDriven.FileRead;
+import com.dataDriven.Environment;
 import com.keywords.Keyword;
 
 
@@ -52,9 +53,9 @@ public class LoginPage extends Keyword{
 		loginIcon.click();
 		log.info("Clicked On Login Button");
 		WaitFor.time(5);
-		username.sendKeys(FileRead.EMAIL);
+		username.sendKeys(Environment.EMAIL);
 		log.info("Username is entered");
-		password.sendKeys(FileRead.PASSWORD);
+		password.sendKeys(Environment.PASSWORD);
 		log.info("Password is entered");
 		WaitFor.time(3);
 		loginButton.click();
@@ -91,7 +92,7 @@ public class LoginPage extends Keyword{
 		loadLoginPage();
 		WaitFor.time(3);
 		String text= signUpLoginText.getText();
-		System.out.println(text);
+		log.info(text);
 	}
 	
 }

@@ -2,7 +2,14 @@ package com.keywords;
 
 
 
+import java.io.File;
+import java.io.IOException;
+import java.util.Set;
+
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -10,8 +17,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import com.dataDriven.FileRead;
-import com.pages.LoginPage;
+import com.configuration.WaitFor;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -45,8 +51,9 @@ public class Keyword {
 		log.info("Browser is closed");
 	}
 	
-	public static String getProductsList(WebElement element) {
-		return element.getText();
+	public static void getProductsList(WebElement element) {
+		String text = element.getText();
+		System.out.println(text);
 	}
 	public static void goToPage(WebElement element) {
 		element.click();
@@ -57,5 +64,30 @@ public class Keyword {
 		Thread.sleep(2000);
 		element1.click();
 	}
-	
+	public static String getScreenShot(String testCaseName) throws IOException {
+		TakesScreenshot screenShot = (TakesScreenshot)driver;
+		File source= screenShot.getScreenshotAs(OutputType.FILE);
+		File destination = new File(System.getProperty("user.dir")+"//reports//"+testCaseName+".png");
+		FileUtils.copyFile(source, destination);
+		return System.getProperty("user.dir")+"//reports//"+testCaseName+".png";
+	}
+	public static void checkIfTheElementIsDisplayed(WebElement element) {
+		WaitFor.elementToBeClickable(element);
+		element.isDisplayed();
+		log.info("Logo is present on the page");
+	}
+	/*public static void switchToWindow(WebElement element,String byTitle) {
+		WaitFor.elementToBeClickable(element);
+		element.click();
+		log.info("New window is opened");
+		Set<String> handles = driver.getWindowHandles();
+		String title = driver.getTitle();
+		while (!title.equalsIgnoreCase(byTitle)) {
+			for (String pointedWindowHandle : handles) {
+				if(driver.switchTo().window(pointedWindowHandle).getTitle().equals(byTitle));
+				System.out.println("Switched on window: "+byTitle);
+			}
+		}
+		
+	}*/
 }

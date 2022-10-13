@@ -11,11 +11,13 @@ import com.keywords.Keyword;
 public class CartPage {
 	private static final Logger log = Logger.getLogger(CartPage.class);
 	
-	@FindBy(xpath = "//div[@id=\"cart-badge\"]") public WebElement cartIcon;
-	@FindBy(xpath = "//a[@href=\"/?src=cart_contshop\"]") public WebElement continueShopping;
 	public CartPage() {
 		PageFactory.initElements(Keyword.driver, this);
 	}
+	
+	@FindBy(xpath = "//div[@id=\"cart-badge\"]") public WebElement cartIcon;
+	@FindBy(xpath = "//a[@href=\"/?src=cart_contshop\"]") public WebElement continueShopping;
+	
 	public void clickOnCartIcon() {
 		cartIcon.click();
 		log.info("Clicked on cart icon");

@@ -1,6 +1,7 @@
 package com.stepDefinition;
 
-import com.dataDriven.FileRead;
+import com.dataDriven.Environment;
+
 
 import com.keywords.Keyword;
 
@@ -10,7 +11,7 @@ import io.cucumber.java.en.Given;
 public class SearchPageSteps {
 	@Given("Open urbanLadder")
 	public void launchUrbanladder() {
-		Keyword.launchUrl(FileRead.url);
+		Keyword.launchUrl(Environment.url);
 	}
 	@And("Click On Search Window")
 	public void clickOnSearchIcon() {

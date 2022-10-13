@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test thread-count="5" name="WishList Tests">
+		<classes>
+			<class name="com.pageTests.WishlistTests" />
+		</classes>
+	</test> <!-- Test -->
+	<test thread-count="5" name="Login Tests">
+		<classes>
+			<class name="com.pageTests.LoginTests" />
+		</classes>
+	</test> <!-- Test -->
+	<test thread-count="5" name="Cart Tests">
+		<classes>
+			<class name="com.pageTests.CartTests" />
+		</classes>
+	</test> <!-- Test -->
+	<test thread-count="5" name="Base For TestNg">
+		<classes>
+			<class name="com.base.BaseForTestNg" />
+		</classes>
+	</test> <!-- Test -->
+	<test thread-count="5" name="Data Driven Tests">
+		<classes>
+			<class name="com.dataProviderTests.DataDrivenTests" />
+		</classes>
+	</test> <!-- Test -->
+	<test thread-count="5" name="Home Tests">
+		<classes>
+			<class name="com.pageTests.HomeTests" />
+		</classes>
+	</test> <!-- Test -->
+	<test thread-count="5" name="Base for Cucumber">
+		<classes>
+			<class name="com.base.BaseForCucumber" />
+		</classes>
+	</test> <!-- Test -->
+	<test thread-count="5" name="Living Room Tests">
+		<classes>
+			<class name="com.pageTests.LivingRoomTests" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
+     
+
+      

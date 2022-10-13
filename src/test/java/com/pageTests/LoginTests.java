@@ -4,32 +4,33 @@ import java.net.SocketException;
 
 
 
+
 import java.net.SocketTimeoutException;
 
 import org.testng.annotations.Test;
 
 import com.base.BaseForTestNg;
 import com.configuration.WaitFor;
-import com.dataDriven.FileRead;
+import com.dataDriven.Environment;
 import com.keywords.Keyword;
 import com.pages.LoginPage;
 
 
 public class LoginTests extends BaseForTestNg{
-	@Test
+	@Test(groups = {"loginTests"})
 	public void verifyIfLoginIsTakingPlaceSuccessfully()throws SocketException, SocketTimeoutException {
-		Keyword.launchUrl(FileRead.url);
+		Keyword.launchUrl(Environment.url);
 		WaitFor.time(3);
 		LoginPage profile = new LoginPage();
 		profile.verifyIfLoginIsProcessingSuccessfully();
 	}
-	@Test
+	@Test(groups = {"loginTests"})
 	public void verifyIfFacebookAndGooglePageIsRedirecting() {
-		Keyword.launchUrl(FileRead.url);
+		Keyword.launchUrl(Environment.url);
 		LoginPage profile = new LoginPage();
 		profile.loadLoginPage();
-		//String Page = "Facebook";
-		String Page = "Google";
+		String Page = "Facebook";
+		//String Page = "Google";
 		switch (Page) {
 		case "Facebook":
 			profile.facebookLogin.click();
@@ -39,22 +40,22 @@ public class LoginTests extends BaseForTestNg{
 			break;
 		}
 	}
-	@Test
+	@Test(groups = {"loginTests"})
 	public void verifyIfCloseButtonIsWorking() {
-		Keyword.launchUrl(FileRead.url);
+		Keyword.launchUrl(Environment.url);
 		LoginPage profile = new LoginPage();
 		profile.loadLoginPage();
 		profile.clickOnCloseButton();
 	}
-	@Test
+	@Test(groups = {"loginTests"})
 	public void getTextOfSignUpPage() {
-		Keyword.launchUrl(FileRead.url);
+		Keyword.launchUrl(Environment.url);
 		LoginPage profile = new LoginPage();
 		profile.printSignupText();
 	}
-	@Test
+	@Test(groups = {"loginTests"})
 	public void getTextOfLoginPage() {
-		Keyword.launchUrl(FileRead.url);
+		Keyword.launchUrl(Environment.url);
 		LoginPage profile = new LoginPage();
 		profile.printLoginText();
 	}
