@@ -3,6 +3,7 @@ package com.pages;
 import org.apache.log4j.Logger;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -16,6 +17,7 @@ public class LivingRoomPage extends Keyword {
 		PageFactory.initElements(driver, this);
 	}
 
+	@CacheLookup
 	@FindBy(xpath = "//a[contains(text(),'Close')]")
 	public WebElement closeButtonLoginPage;
 	@FindBy(xpath = "//div[@class=\"subnavlist_wrapper clearfix\"]")
@@ -24,10 +26,8 @@ public class LivingRoomPage extends Keyword {
 	public WebElement Living;
 	@FindBy(xpath = "//a[@href=\"/coffee-table?src=g_topnav_living_tables_coffee-tables\"]")
 	public WebElement coffeeTable;
-	@FindBy(xpath = "//img[@class=\"product-img-default\"]")
-	public WebElement coffeeTable1;
 	@FindBy(xpath = "//a[@href=\"/products/kivaha-4-seater-coffee-table-set?sku=FNCFWLMB4003004&src=subcat\"]")
-	public WebElement coffeeTable1Options;
+	public WebElement coffeeTable1;
 	@FindBy(xpath = "//div[@class=\"item\"]")
 	public WebElement sortBy;
 	@FindBy(xpath = "//li[@class=\"option\"]")
@@ -40,6 +40,19 @@ public class LivingRoomPage extends Keyword {
 	public WebElement lowToHigh;
 	@FindBy(xpath = "//li[contains(text(),'Price: High to Low')]")
 	public WebElement highToLow;
+	@FindBy(xpath = "(//a[@href=\"#\"])[2]")
+	public WebElement kivahaPageNextButton;
+	@FindBy(xpath = "//a[@class=\"orbit-prev\"]")
+	public WebElement kivahaPagePreviousButton;
+	@FindBy(xpath = "//span[contains(text(), 'Beige')]")
+	public WebElement kivahaBeigeTable;
+	@FindBy(xpath = "//span[contains(text(),'Morocco Lattice Rust')]")
+	public WebElement kivahaMoroccoTable;
+	@FindBy(xpath = "//button[@class=\"primary action-button  add-to-cart\"]")
+	public WebElement kivahaAddToCart;
+	@FindBy(xpath = "(//button[contains(text(),'Checkout')])[2]")
+	public WebElement checkout;
+	
 
 	public void hoverOnLiving() throws InterruptedException {
 		WaitFor.time(5);
@@ -53,13 +66,12 @@ public class LivingRoomPage extends Keyword {
 		log.info("Coffee-Table page is opened");
 	}
 
-	public void hoveredOnImage() throws InterruptedException {
+	public void openKivahaSquareTablePage() throws InterruptedException {
 		WaitFor.time(3);
 		coffeeTable1.click();
-	}
-
-	public void goToCoffeeTablePage() {
-		Keyword.goToPage(coffeeTable1Options);
+		WaitFor.time(2);
+		Keyword.switchToWindow("Kivaha Square Solid");
+		WaitFor.time(5);
 	}
 
 	public void selectSortByRecommeneded() throws InterruptedException {
@@ -94,6 +106,53 @@ public class LivingRoomPage extends Keyword {
 	public void clickOnCloseButton() {
 		WaitFor.time(5);
 		closeButtonLoginPage.click();
+	}
+	public void clickNextButtonKivaha() {
+		kivahaPageNextButton.click();
+		WaitFor.time(2);
+		kivahaPageNextButton.click();
+		WaitFor.time(2);
+		kivahaPageNextButton.click();
+		WaitFor.time(2);
+		kivahaPageNextButton.click();
+		WaitFor.time(2);
+		kivahaPageNextButton.click();
+		WaitFor.time(2);
+	}
+	public void clickPreviousButtonKivaha() {
+		kivahaPagePreviousButton.click();
+		WaitFor.time(2);
+		kivahaPagePreviousButton.click();
+		WaitFor.time(2);
+		kivahaPagePreviousButton.click();
+		WaitFor.time(2);
+		kivahaPagePreviousButton.click();
+		WaitFor.time(2);
+		kivahaPagePreviousButton.click();
+		WaitFor.time(2);
+	}
+	public void addToCart() {
+		WaitFor.time(5);
+		kivahaAddToCart.submit();
+	}
+	public void exploreOptions(WebElement element) {
+		WaitFor.time(3);
+		element.click();
+		WaitFor.time(3);
+	}
+
+	public void clickOnBeige() {
+		kivahaBeigeTable.click();
+		WaitFor.time(3);
+	}
+
+	public void clickOnMorroco() {
+		WaitFor.time(3);
+		kivahaMoroccoTable.click();
+	}
+
+	public void clickCheckout() {
+		checkout.click();
 	}
 
 }

@@ -18,15 +18,31 @@ import com.pages.LivingRoomPage;
 public class LivingRoomTests extends BaseForTestNg {
 	
 	@Test
-	public void verifyIfLivingRoomDropBoxOpensAndComparesSelectedItems() throws InterruptedException, SocketTimeoutException, SocketException {
+	public void verifyIfLivingRoomDropBoxOpens() throws InterruptedException, SocketTimeoutException, SocketException {
 		Keyword.launchUrl(Environment.url);
-		/*LoginTests login = new LoginTests();
-		login.verifyIfLoginIsTakingPlaceSuccessfully();*/
+		LoginTests login = new LoginTests();
+		login.verifyIfLoginIsTakingPlaceSuccessfully();
 		LivingRoomPage living = new LivingRoomPage();
 		living.hoverOnLiving();
 		living.clickOnCoffeeTable();
-		living.clickOnCloseButton();
-		living.hoveredOnImage();
+		
+	}
+	@Test
+	public void checkIfTheProductPageOperationsArePerformed() throws SocketTimeoutException, SocketException, InterruptedException {
+		verifyIfLivingRoomDropBoxOpens();
+		LivingRoomPage living = new LivingRoomPage();
+		living.openKivahaSquareTablePage();
+		living.clickNextButtonKivaha();
+		WaitFor.time(5);
+		living.clickOnBeige();
+		WaitFor.time(3);
+		living.clickOnMorroco();
+		WaitFor.time(3);
+		WaitFor.time(2);
+		living.addToCart();
+		WaitFor.time(5);
+		living.clickCheckout();
+		WaitFor.time(30);
 	}
 	@Test
 	public void loadCoffeeTablePage() throws SocketTimeoutException, SocketException, InterruptedException {
