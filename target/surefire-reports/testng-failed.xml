@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" name="Cart Tests(failed)" verbose="0">
+    <classes>
+      <class name="com.pageTests.CartTests">
+        <methods>
+          <include name="tearDown"/>
+          <include name="verifyCartPageLogin"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.pageTests.CartTests -->
+    </classes>
+  </test> <!-- Cart Tests(failed) -->
+  <test thread-count="5" name="Living Room Tests(failed)" verbose="0">
+    <classes>
+      <class name="com.pageTests.LivingRoomTests">
+        <methods>
+          <include name="verifyIfLivingRoomDropBoxOpens"/>
+          <include name="sortByLowToHigh"/>
+          <include name="sortByDiscount"/>
+          <include name="checkIfTheProductPageOperationsArePerformed"/>
+          <include name="tearDown"/>
+          <include name="sortByRecommended"/>
+          <include name="setUp"/>
+          <include name="sortByHighToLow"/>
+          <include name="verifyIfLivingCatalogProductListIsDisplayed"/>
+          <include name="sorByNewArrivals"/>
+          <include name="loadCoffeeTablePage"/>
+        </methods>
+      </class> <!-- com.pageTests.LivingRoomTests -->
+    </classes>
+  </test> <!-- Living Room Tests(failed) -->
+</suite> <!-- Failed suite [Suite] -->

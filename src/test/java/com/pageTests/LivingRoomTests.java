@@ -5,19 +5,33 @@ import java.net.SocketException;
 
 
 
+
 import java.net.SocketTimeoutException;
 
+import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.base.BaseForTestNg;
+import com.configuration.ScreenshotUtility;
 import com.configuration.WaitFor;
 import com.dataDriven.Environment;
 import com.keywords.Keyword;
 import com.pages.LivingRoomPage;
 
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Step;
+@Listeners({ScreenshotUtility.class})
 public class LivingRoomTests extends BaseForTestNg {
 	
-	@Test
+	@Test(priority = 1)
+	@Epic("EP001")
+	@Feature("Feature 1 : Living Dropdown")
+	@Step("Verify Living dropdown")
+	@Severity(SeverityLevel.NORMAL)
 	public void verifyIfLivingRoomDropBoxOpens() throws InterruptedException, SocketTimeoutException, SocketException {
 		Keyword.launchUrl(Environment.url);
 		LoginTests login = new LoginTests();
@@ -27,7 +41,7 @@ public class LivingRoomTests extends BaseForTestNg {
 		living.clickOnCoffeeTable();
 		
 	}
-	@Test
+	@Test(priority = 9)
 	public void checkIfTheProductPageOperationsArePerformed() throws SocketTimeoutException, SocketException, InterruptedException {
 		verifyIfLivingRoomDropBoxOpens();
 		LivingRoomPage living = new LivingRoomPage();
@@ -44,54 +58,82 @@ public class LivingRoomTests extends BaseForTestNg {
 		living.clickCheckout();
 		WaitFor.time(30);
 	}
-	@Test
+	@Test(priority = 3)
 	public void loadCoffeeTablePage() throws SocketTimeoutException, SocketException, InterruptedException {
 		Keyword.launchUrl(Environment.url);
-		LoginTests login = new LoginTests();
 		WaitFor.time(3);
-		login.verifyIfLoginIsTakingPlaceSuccessfully();
 		LivingRoomPage living = new LivingRoomPage();
 		living.hoverOnLiving();
 		living.clickOnCoffeeTable();
 	}
-	@Test
+	@Test(priority = 4)
 	public void sortByLowToHigh() throws SocketTimeoutException, SocketException, InterruptedException {
 		loadCoffeeTablePage();
 		LivingRoomPage living = new LivingRoomPage();
 		living.selectSortByLowToHigh();
 		
 	}
-	@Test
+	@Test(priority = 5)
 	public void sortByDiscount() throws SocketTimeoutException, SocketException, InterruptedException {
 		loadCoffeeTablePage();
 		LivingRoomPage living = new LivingRoomPage();
 		living.selectSortByDiscount();
 	}
-	@Test
+	@Test(priority = 6)
 	public void sortByHighToLow() throws SocketTimeoutException, SocketException, InterruptedException {
 		loadCoffeeTablePage();
 		LivingRoomPage living = new LivingRoomPage();
 		living.selectSortByHighToLow();
 	}
-	@Test()
+	@Test(priority = 7)
 	public void sortByRecommended() throws SocketTimeoutException, SocketException, InterruptedException {
 		loadCoffeeTablePage();
 		LivingRoomPage living = new LivingRoomPage();
 		living.selectSortByRecommeneded();
 	}
-	@Test
+	@Test(priority = 8)
 	public void sorByNewArrivals() throws SocketTimeoutException, SocketException, InterruptedException {
 		loadCoffeeTablePage();
 		LivingRoomPage living = new LivingRoomPage();
 		living.selectSortByNewArrivals();
 	}
-	@Test
+	@Test(priority = 2)
 	public void verifyIfLivingCatalogProductListIsDisplayed() throws InterruptedException {
 		Keyword.launchUrl(Environment.url);
-		//Keyword.Login();
 		LivingRoomPage living = new LivingRoomPage();
 		living.hoverOnLiving();
 		WaitFor.time(5);
-		living.getProductList();
+		String products = living.getProductList();
+		String actualList = "Seating & Chairs\r\n"
+				+ "Lounge Chairs\r\n"
+				+ "Accent Chairs\r\n"
+				+ "Ottomans & Stools\r\n"
+				+ "Bean Bags\r\n"
+				+ "Benches\r\n"
+				+ "Bar Stools\r\n"
+				+ "Rocking Chairs\r\n"
+				+ "Gaming Chairs\r\n"
+				+ "Tables\r\n"
+				+ "Coffee Tables\r\n"
+				+ "Side & End Tables\r\n"
+				+ "Console Table\r\n"
+				+ "Nested Tables\r\n"
+				+ "Coffee Table Sets\r\n"
+				+ "Living Storage\r\n"
+				+ "TV Units\r\n"
+				+ "Bookshelves\r\n"
+				+ "Shoe Racks\r\n"
+				+ "Prayer Units\r\n"
+				+ "Showcases\r\n"
+				+ "Wall Shelves\r\n"
+				+ "Entryway & Foyer\r\n"
+				+ "Corner Storage\r\n"
+				+ "Room Divider\r\n"
+				+ "Living Room Sets";
+		Assert.assertEquals(products, actualList);
+	}
+	@Test
+	public void selectDropdownCheckbox() {
+		
 	}
 }

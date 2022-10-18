@@ -4,15 +4,18 @@ import java.net.SocketException;
 
 
 
+
 import java.net.SocketTimeoutException;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.base.BaseForTestNg;
+import com.configuration.ScreenshotUtility;
 import com.dataDriven.Environment;
 import com.keywords.Keyword;
 import com.pages.WishlistPage;
-
+@Listeners({ScreenshotUtility.class})
 public class WishlistTests extends BaseForTestNg{
 	
 	@Test

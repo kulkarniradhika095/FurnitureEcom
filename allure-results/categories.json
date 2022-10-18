@@ -1,0 +1,5 @@
+[ {
+  "name" : "Performance Defects",
+  "matchedStatuses" : [ "broken" ,"failed"],
+  "traceRegex" : ".*Timeout.*"
+} ]

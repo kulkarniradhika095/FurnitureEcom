@@ -1,10 +1,7 @@
 package com.base;
 
-
-
 import org.apache.log4j.Logger;
-
-
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
@@ -14,6 +11,8 @@ import com.keywords.Keyword;
 
 
 public class BaseForTestNg {
+	public WebDriver driver;
+	public ThreadLocal<WebDriver> thread = new ThreadLocal<>();
 	public static final Logger log = Logger.getLogger(BaseForTestNg.class);
 	
 	@Parameters("browser-name")
@@ -26,10 +25,12 @@ public class BaseForTestNg {
 			browserName = "Chrome";
 			log.info("Setting Default browser as : "+browserName);
 		}
-		Keyword.openBrowser(browserName);
+		this.driver = Keyword.openBrowser(browserName);
+		thread.set(driver);
 	}
 	@AfterTest(alwaysRun = true)
 	public void tearDown() throws Exception {
-		Keyword.closeBrowser();
+		thread.get().quit();
+		log.info("Browser is closed");
 	}
 }
