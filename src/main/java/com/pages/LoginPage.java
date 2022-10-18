@@ -86,7 +86,7 @@ public class LoginPage extends Keyword{
 		loadSignUpPage();
 		WaitFor.time(3);
 		String text= signUpLoginText.getText();
-		log.info(text);
+		System.out.println(text);
 	}
 	public void printLoginText() {
 		loadLoginPage();

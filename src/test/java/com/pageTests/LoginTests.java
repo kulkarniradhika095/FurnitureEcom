@@ -7,17 +7,19 @@ import java.net.SocketException;
 
 import java.net.SocketTimeoutException;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.base.BaseForTestNg;
 import com.configuration.WaitFor;
 import com.dataDriven.Environment;
 import com.keywords.Keyword;
+import com.onTestFailure.AllureListners;
 import com.pages.LoginPage;
 
-
+@Listeners({AllureListners.class})
 public class LoginTests extends BaseForTestNg{
-	@Test(groups = {"loginTests"})
+	@Test(groups = {"loginTests"},priority = 1)
 	public void verifyIfLoginIsTakingPlaceSuccessfully()throws SocketException, SocketTimeoutException {
 		Keyword.launchUrl(Environment.url);
 		WaitFor.time(3);

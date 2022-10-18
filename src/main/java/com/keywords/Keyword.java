@@ -2,6 +2,7 @@ package com.keywords;
 
 import java.io.File;
 
+
 import java.io.IOException;
 import java.util.Set;
 
@@ -9,22 +10,22 @@ import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
 import com.configuration.WaitFor;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Keyword {
-	public static RemoteWebDriver driver;
+	public static WebDriver driver;
 	private static final Logger log = Logger.getLogger(Keyword.class);
 
-	public static void openBrowser(String browserName) {
+	public static WebDriver openBrowser(String browserName) {
 		if (browserName.equalsIgnoreCase("Chrome")) {
 			ChromeOptions option = new ChromeOptions();
 			option.addArguments("disable-notifications", "start-maximized");
@@ -38,6 +39,7 @@ public class Keyword {
 			driver = new EdgeDriver();
 		}
 		log.info(browserName + " browser has launched successfully..!");
+		return driver;
 
 	}
 
@@ -51,9 +53,10 @@ public class Keyword {
 		log.info("Browser is closed");
 	}
 
-	public static void getProductsList(WebElement element) {
+	public static String getProductsList(WebElement element) {
 		String text = element.getText();
 		System.out.println(text);
+		return text;
 	}
 
 	public static void goToPage(WebElement element) {

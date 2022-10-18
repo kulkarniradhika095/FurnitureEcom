@@ -16,7 +16,8 @@
     <classes>
       <class name="com.pageTests.LivingRoomTests">
         <methods>
-          <include name="verifyIfLivingRoomDropBoxOpensAndComparesSelectedItems"/>
+          <include name="verifyIfLivingRoomDropBoxOpens"/>
+          <include name="checkIfTheProductPageOperationsArePerformed"/>
           <include name="sortByDiscount"/>
           <include name="sortByLowToHigh"/>
           <include name="tearDown"/>
@@ -24,6 +25,7 @@
           <include name="setUp"/>
           <include name="sortByHighToLow"/>
           <include name="sorByNewArrivals"/>
+          <include name="loadCoffeeTablePage"/>
         </methods>
       </class> <!-- com.pageTests.LivingRoomTests -->
     </classes>

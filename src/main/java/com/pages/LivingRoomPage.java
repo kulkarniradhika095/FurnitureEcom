@@ -99,8 +99,10 @@ public class LivingRoomPage extends Keyword {
 		log.info("Coffee-Table page is sorted according to high to low price");
 	}
 
-	public void getProductList() {
-		Keyword.getProductsList(LivingRoomProductsBy);
+	public String getProductList() {
+		String text =LivingRoomProductsBy.getText();
+		System.out.println(text);
+		return text;
 	}
 
 	public void clickOnCloseButton() {
