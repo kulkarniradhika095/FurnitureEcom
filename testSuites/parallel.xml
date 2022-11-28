@@ -41,6 +41,11 @@
 			<class name="com.pageTests.LivingRoomTests" />
 		</classes>
 	</test> <!-- Test -->
+	<test thread-count="5" name="BedRoom Tests">
+		<classes>
+			<class name="com.pageTests.BedroomTests" />
+		</classes>
+	</test> <!-- Test -->
 </suite> <!-- Suite -->
      
 

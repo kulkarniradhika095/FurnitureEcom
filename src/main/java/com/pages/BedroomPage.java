@@ -22,6 +22,11 @@ public class BedroomPage {
 	@CacheLookup
 	@FindBy(xpath = "//li[@class='topnav_item bedroomunit']") public WebElement Bedroom;
 	@FindBy(xpath = "//li[@class='topnav_item bedroomunit']//div[@class='subnavlist_wrapper clearfix']") public WebElement BedroomDropDown;
+	@FindBy(xpath = "//li[@class='subnav_item 374']") public WebElement BedWithStorage;
+	@FindBy(xpath = "//img[@title='Beds With Storage Furniture Marbito Engineered Wood Queen Size Box Storage Bed in Polished Finish']") public WebElement BedWithStorageMarbito;
+	@FindBy(xpath = "//div[@class='orbit-container current']//a[@class='orbit-next']") public WebElement nextButtonMarbito;
+	@FindBy(xpath = "//div[@id='buy_details_152686']//button[@id='add-to-cart-button']") public WebElement marbitoAddToCart;
+	@FindBy(xpath = "") public WebElement marbitoCheckOut;
 	
 	/*
 	 * =====================================================methods=====================================================================
@@ -75,6 +80,28 @@ public class BedroomPage {
 				+ "Kids Seating\r\n"
 				+ "Kids Decor";
 		Assert.assertEquals(bedroomItems, actualBedroomItems);
+	}
+
+	public void addProductsToCart() {
+		Bedroom.click();
+		WaitFor.time(2);
+		BedWithStorage.click();
+		WaitFor.time(2);
+		BedWithStorageMarbito.click();
+		Keyword.switchToWindow("Marbito Engineered Wood Queen Size Box Storage Bed In Polished Finish");
+		WaitFor.time(3);nextButtonMarbito.click();
+		WaitFor.time(3);nextButtonMarbito.click();
+		WaitFor.time(3);nextButtonMarbito.click();
+		WaitFor.time(3);nextButtonMarbito.click();
+		WaitFor.time(3);nextButtonMarbito.click();
+		WaitFor.time(3);nextButtonMarbito.click();
+		WaitFor.time(3);nextButtonMarbito.click();
+	}
+
+	public void clickOnCheckOut() {
+		marbitoAddToCart.click();
+		WaitFor.time(5);
+		
 	}
 	
 }

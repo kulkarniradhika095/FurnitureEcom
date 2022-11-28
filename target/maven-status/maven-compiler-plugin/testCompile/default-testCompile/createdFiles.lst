@@ -5,3 +5,4 @@ com\dataProviderTests\DataDrivenTests.class
 com\pageTests\WishlistTests.class
 com\pageTests\HomeTests.class
 com\pageTests\CartTests.class
+com\pageTests\BedroomTests.class

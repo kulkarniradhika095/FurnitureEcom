@@ -30,7 +30,7 @@ public class LoginPage extends Keyword{
 	@CacheLookup
 	@FindBy(xpath = "//div[@class=\"popup-text text-center vert large-6 columns\"]")public WebElement signUpLoginText;
 	@FindBy(xpath = "//span[@class=\"header-icon-link user-profile-icon\"]") public WebElement profileIcon;
-	@FindBy(xpath = "//a[contains(text(),'Log In')]")public WebElement loginIcon;
+	@FindBy(xpath = "//a[normalize-space()='Log In']")public WebElement loginIcon;
 	@FindBy(xpath = "//a[contains(text(),'Sign Up')]")public WebElement signUp;
 	@FindBy(xpath = "//input[@class=\"email required input_authentication\"]") public WebElement username;
 	@FindBy(xpath = "//input[@class=\"required input_authentication\"]") public WebElement password;
@@ -39,6 +39,7 @@ public class LoginPage extends Keyword{
 	@FindBy(xpath = "//a[@id=\"google_login\"]")public WebElement googleLogin;
 	@FindBy(xpath = "//a[@class=\"forget-password link-color\"]")public WebElement forgotPassword;
 	@FindBy(xpath = "//a[@class=\"close-reveal-modal hide-mobile\"]")public static WebElement close;
+	@FindBy(xpath = "//a[@id=\"logout\"]")public static WebElement logout;
 	
 	/*
 	 * =================================================================Methods==========================================================================
@@ -94,5 +95,10 @@ public class LoginPage extends Keyword{
 		String text= signUpLoginText.getText();
 		log.info(text);
 	}
+	public void logout() {
+		logout.click();
+		log.info("User logged out successfully");
+	}
+	
 	
 }

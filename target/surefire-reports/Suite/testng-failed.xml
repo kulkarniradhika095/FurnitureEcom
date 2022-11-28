@@ -16,17 +16,10 @@
     <classes>
       <class name="com.pageTests.LivingRoomTests">
         <methods>
-          <include name="verifyIfLivingRoomDropBoxOpens"/>
-          <include name="sortByLowToHigh"/>
-          <include name="sortByDiscount"/>
           <include name="checkIfTheProductPageOperationsArePerformed"/>
           <include name="tearDown"/>
-          <include name="sortByRecommended"/>
           <include name="setUp"/>
-          <include name="sortByHighToLow"/>
           <include name="verifyIfLivingCatalogProductListIsDisplayed"/>
-          <include name="sorByNewArrivals"/>
-          <include name="loadCoffeeTablePage"/>
         </methods>
       </class> <!-- com.pageTests.LivingRoomTests -->
     </classes>

@@ -1,8 +1,10 @@
+com\configuration\ScreenshotUtility.class
 com\dataDriven\ExcelUtility.class
 com\configuration\WaitFor.class
 com\base\BaseForCucumber.class
 com\dataDriven\Environment.class
 com\stepDefinition\DealZoneSteps.class
+com\pages\BedroomPage.class
 com\base\BaseForTestNg.class
 com\stepDefinition\SearchPageSteps.class
 com\pages\HomePage.class

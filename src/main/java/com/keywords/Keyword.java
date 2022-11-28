@@ -1,10 +1,13 @@
 package com.keywords;
 
+import java.awt.image.BufferedImage;
 import java.io.File;
 
 
 import java.io.IOException;
 import java.util.Set;
+
+import javax.imageio.ImageIO;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
@@ -20,6 +23,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import com.configuration.WaitFor;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import ru.yandex.qatools.ashot.AShot;
+import ru.yandex.qatools.ashot.Screenshot;
+import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
 public class Keyword {
 	public static WebDriver driver;
@@ -92,6 +98,13 @@ public class Keyword {
 				break;
 			}
 		}
+	}
+	public static void wholePageScreenshot() throws IOException {
+		AShot shot = new AShot();
+		shot.shootingStrategy(ShootingStrategies.viewportPasting(1000));
+		Screenshot sc = shot.takeScreenshot(driver);
+		BufferedImage image = sc.getImage();
+		ImageIO.write(image, "JPG", new File("SC1.jpg"));
 	}
 	
 }
