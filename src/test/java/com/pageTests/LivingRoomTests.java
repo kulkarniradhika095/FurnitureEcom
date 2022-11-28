@@ -1,37 +1,19 @@
 package com.pageTests;
-
+import java.io.IOException;
 import java.net.SocketException;
-
-
-
-
-
 import java.net.SocketTimeoutException;
-
 import org.testng.Assert;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
 import com.base.BaseForTestNg;
-import com.configuration.ScreenshotUtility;
 import com.configuration.WaitFor;
 import com.dataDriven.Environment;
 import com.keywords.Keyword;
 import com.pages.LivingRoomPage;
 
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
-import io.qameta.allure.Step;
-@Listeners({ScreenshotUtility.class})
+//@Listeners({ScreenshotUtility.class})
 public class LivingRoomTests extends BaseForTestNg {
 	
 	@Test(priority = 1)
-	@Epic("EP001")
-	@Feature("Feature 1 : Living Dropdown")
-	@Step("Verify Living dropdown")
-	@Severity(SeverityLevel.NORMAL)
 	public void verifyIfLivingRoomDropBoxOpens() throws InterruptedException, SocketTimeoutException, SocketException {
 		Keyword.launchUrl(Environment.url);
 		LoginTests login = new LoginTests();
@@ -98,7 +80,7 @@ public class LivingRoomTests extends BaseForTestNg {
 		living.selectSortByNewArrivals();
 	}
 	@Test(priority = 2)
-	public void verifyIfLivingCatalogProductListIsDisplayed() throws InterruptedException {
+	public void verifyIfLivingCatalogProductListIsDisplayed() throws InterruptedException, IOException {
 		Keyword.launchUrl(Environment.url);
 		LivingRoomPage living = new LivingRoomPage();
 		living.hoverOnLiving();
@@ -131,6 +113,7 @@ public class LivingRoomTests extends BaseForTestNg {
 				+ "Room Divider\r\n"
 				+ "Living Room Sets";
 		Assert.assertEquals(products, actualList);
+		Keyword.wholePageScreenshot();
 	}
 	@Test
 	public void selectDropdownCheckbox() {

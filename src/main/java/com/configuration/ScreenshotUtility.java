@@ -1,6 +1,7 @@
 package com.configuration;
 
 import java.io.File;
+
 import java.io.IOException;
 
 
@@ -12,20 +13,31 @@ import org.testng.ITestResult;
 
 import com.base.BaseForTestNg;
 
-import io.qameta.allure.Attachment;
+
 
 public class ScreenshotUtility implements ITestListener{
-	
-	@Attachment(value = "Screenshot", type = "image/png")
 	@Override
 	public void onTestFailure(ITestResult result) {
+	}
+	@Override
+	public void onTestSuccess(ITestResult result) {
+
+	}
+	@Override
+	public void onTestSkipped(ITestResult result) {
+
+	}
+	@Override
+	public void onTestStart(ITestResult result) {
+
+	}
+		
+	public String getScreenshot(String testCaseName) throws IOException {
 		BaseForTestNg base = new BaseForTestNg();
 		TakesScreenshot ts = (TakesScreenshot)base.thread.get();
-		byte[] data = ts.getScreenshotAs(OutputType.BYTES);
-		try {
-			FileUtils.writeByteArrayToFile(new File("/screenshots/sc1.png"), data);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		File source = ts.getScreenshotAs(OutputType.FILE);
+		File destination = new File(System.getProperty("user.dir")+"//reports//"+testCaseName+".png");
+		FileUtils.copyFile(source, destination);
+		return System.getProperty("user.dir")+"//reports//"+testCaseName+".png";
 	}
 }

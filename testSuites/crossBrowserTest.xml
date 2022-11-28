@@ -12,6 +12,7 @@
 				<class name="com.pageTests.LivingRoomTests" />
 				<class name="com.base.BaseForCucumber" />
 				<class name="com.pageTests.HomeTests" />
+				<class name="com.pageTests.BedroomTests" />
 			</classes>
 		</parameter>
 	</test> <!-- Test -->
@@ -26,6 +27,7 @@
 				<class name="com.pageTests.LivingRoomTests" />
 				<class name="com.base.BaseForCucumber" />
 				<class name="com.pageTests.HomeTests" />
+				<class name="com.pageTests.BedroomTests" />
 			</classes>
 		</parameter>
 	</test> <!-- Test -->
@@ -40,6 +42,7 @@
 				<class name="com.pageTests.LivingRoomTests" />
 				<class name="com.base.BaseForCucumber" />
 				<class name="com.pageTests.HomeTests" />
+				<class name="com.pageTests.BedroomTests" />
 			</classes>
 		</parameter>
 	</test> <!-- Test -->

@@ -1,6 +1,8 @@
 package com.onTestFailure;
 
 import org.openqa.selenium.OutputType;
+
+
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
@@ -9,10 +11,9 @@ import org.testng.ITestResult;
 
 import com.keywords.Keyword;
 
-import io.qameta.allure.Attachment;
 
 public class AllureListners implements ITestListener {
-	private static String getTestMethodName(ITestResult iTestResult) {
+	/*private static String getTestMethodName(ITestResult iTestResult) {
 		return iTestResult.getMethod().getConstructorOrMethod().getName();
 	}
 
@@ -71,4 +72,5 @@ public class AllureListners implements ITestListener {
 	public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
 		System.out.println("Test failed but it is in defined success ratio " + getTestMethodName(iTestResult));
 	}
+	*/
 }

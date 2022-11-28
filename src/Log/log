@@ -1,6 +1,10 @@
-2022-Oct-18 11:00:24,119 [main] com.keywords.Keyword 
+2022-Nov-28 16:42:43,784 [main] com.keywords.Keyword 
   INFO  Chrome browser has launched successfully..!
-2022-Oct-18 11:00:25,760 [main] com.keywords.Keyword 
+2022-Nov-28 16:42:49,009 [main] com.keywords.Keyword 
   INFO  https://www.urbanladder.com/ : url is launched
-2022-Oct-18 11:00:29,343 [main] com.base.BaseForTestNg 
+2022-Nov-28 16:42:54,210 [main] com.keywords.Keyword 
+  INFO  Reloaded to Living page
+2022-Nov-28 16:42:54,210 [main] com.pages.LivingRoomPage 
+  INFO  hovered on LivingRoom Tab
+2022-Nov-28 16:42:59,861 [main] com.base.BaseForTestNg 
   INFO  Browser is closed

@@ -61,4 +61,12 @@ public class LoginTests extends BaseForTestNg{
 		LoginPage profile = new LoginPage();
 		profile.printLoginText();
 	}
+	@Test
+	public static void logout() {
+		Keyword.launchUrl(Environment.url);
+		LoginPage profile = new LoginPage();
+		profile.verifyIfLoginIsProcessingSuccessfully();
+		WaitFor.time(3);
+		//profile.logout();
+	}
 }
